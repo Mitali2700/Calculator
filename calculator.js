@@ -2,13 +2,23 @@
 
 const express = require("express");
 const bodyParser=require("body-parser");
+
 const app= express();
+//app.use(bodyParser.text)              // So parse the requests into text
+//app.use(bodyParser.json)              //So it will looks a bit like javascript objects, or the one that we are going to be using is:
+app.use(bodyParser.urlencoded({extended:true}))        // Parse HTML kind of data
+
+/************************body-parse ************************
+            It allows you to go into any of your routes, 
+        and you can trap into something called request.body
+*/
 
 app.get("/", function(req,res){
     res.sendFile(__dirname+"/index.html");
 });
 
 app.post("/",function(req,res){
+    console.log(req.body.num1);
     res.send("Thanks for posting that.")
 });
 
