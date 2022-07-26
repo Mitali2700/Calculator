@@ -1,7 +1,7 @@
 //jshint esversion:6
 
 const express = require("express");
-
+const bodyParser=require("body-parser");
 const app= express();
 
 app.get("/", function(req,res){
@@ -29,3 +29,16 @@ app.listen(3000,function(){
 // 300 - Go away
 // 400 - You screwed up
 // 500 - I screwed up
+
+/* 
+<H1 align="center">Calcuolator<H1>
+<H2>Technologies used</H2>
+ 
+*/
+
+/*
+We need to be able to get that data into here, into this callback function, so we can calculate the output,and then 
+send the result back to the browser.Now, in order to tap into those pieces of data, we have to install another NPM 
+package, which is called Body Parser.So let's head over to our command line, and Command C to exit our server, and 
+then we're going to npm install - "npm install body-parser"
+*/
